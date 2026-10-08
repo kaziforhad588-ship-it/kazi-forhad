@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kazi Forhad — Graphic Designer & Typography Artist</title>
+
+<meta name="description"
+content="Kazi Forhad — Graphic Designer and Bangla Typography Artist from Dhaka, Bangladesh.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+Bengali:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   ROOT
+========================= */
+
+:root{
+    --bg:#05070b;
+    --bg2:#080c14;
+    --card:#0d121c;
+    --text:#f5f7fb;
+    --muted:#929aaa;
+    --blue:#1687ff;
+    --blue2:#00b7ff;
+    --border:rgba(255,255,255,.09);
+    --glass:rgba(255,255,255,.045);
+    --radius:24px;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Inter","Noto Sans Bengali",sans-serif;
+    background:
+        radial-gradient(circle at 80% 10%,rgba(22,135,255,.12),transparent 30%),
+        radial-gradient(circle at 10% 40%,rgba(0,183,255,.06),transparent 25%),
+        var(--bg);
+    color:var(--text);
+    overflow-x:hidden;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+/* =========================
+   CURSOR GLOW
+========================= */
+
+.cursor-glow{
+    width:300px;
+    height:300px;
+    position:fixed;
+    pointer-events:none;
+    border-radius:50%;
+    background:radial-gradient(circle,
+        rgba(22,135,255,.12),
+        transparent 65%);
+    transform:translate(-50%,-50%);
+    z-index:0;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    padding:20px 6%;
+    transition:.3s;
+}
+
+nav.scrolled{
+    background:rgba(5,7,11,.75);
+    backdrop-filter:blur(20px);
+    border-bottom:1px solid var(--border);
+}
+
+.nav-inner{
+    max-width:1250px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:900;
+    letter-spacing:2px;
+}
+
+.logo span{
+    color:var(--blue);
+}
+
+.nav-links{
+    display:flex;
+    gap:32px;
+    list-style:none;
+}
+
+.nav-links a{
+    color:#c8ced9;
+    font-size:14px;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#fff;
+}
+
+.nav-btn{
+    padding:11px 20px;
+    border:1px solid rgba(22,135,255,.5);
+    border-radius:100px;
+    color:#fff;
+    background:rgba(22,135,255,.08);
+}
+
+.menu{
+    display:none;
+    font-size:26px;
+    cursor:pointer;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+    max-width:1250px;
+    margin:auto;
+    padding:150px 6% 100px;
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+    align-items:center;
+    gap:60px;
+    position:relative;
+    z-index:1;
+}
+
+.hero-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:9px 15px;
+    border:1px solid var(--border);
+    background:var(--glass);
+    border-radius:100px;
+    color:#bfc7d5;
+    font-size:13px;
+    margin-bottom:25px;
+}
+
+.dot{
+    width:7px;
+    height:7px;
+    background:#27e88b;
+    border-radius:50%;
+    box-shadow:0 0 15px #27e88b;
+}
+
+.hero h1{
+    font-size:clamp(55px,8vw,110px);
+    line-height:.9;
+    letter-spacing:-5px;
+    font-weight:900;
+}
+
+.hero h1 span{
+    color:transparent;
+    -webkit-text-stroke:1px rgba(255,255,255,.5);
+}
+
+.hero-subtitle{
+    font-size:20px;
+    color:#c7ccd7;
+    margin:30px 0 15px;
+}
+
+.hero-desc{
+    color:var(--muted);
+    line-height:1.8;
+    max-width:570px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    margin-top:35px;
+}
+
+.btn{
+    padding:15px 24px;
+    border-radius:100px;
+    font-size:14px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:linear-gradient(100deg,var(--blue),var(--blue2));
+    color:#fff;
+    box-shadow:0 10px 40px rgba(22,135,255,.2);
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+}
+
+.btn-outline{
+    border:1px solid var(--border);
+    background:var(--glass);
+}
+
+.btn-outline:hover{
+    border-color:var(--blue);
+}
+
+/* HERO VISUAL */
+
+.hero-visual{
+    position:relative;
+}
+
+.hero-card{
+    width:100%;
+    aspect-ratio:4/5;
+    border-radius:35px;
+    background:
+        linear-gradient(145deg,
+        rgba(22,135,255,.25),
+        rgba(255,255,255,.02)),
+        var(--card);
+    border:1px solid var(--border);
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+    overflow:hidden;
+    position:relative;
+}
+
+.hero-card::before{
+    content:"KF";
+    position:absolute;
+    top:25px;
+    right:30px;
+    font-size:80px;
+    font-weight:900;
+    color:rgba(255,255,255,.035);
+}
+
+.hero-placeholder{
+    width:80%;
+    height:90%;
+    border-radius:30px 30px 0 0;
+    background:
+        radial-gradient(circle at 50% 30%,
+        rgba(22,135,255,.55),
+        transparent 28%),
+        linear-gradient(145deg,#101927,#070a10);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:rgba(255,255,255,.15);
+    font-size:120px;
+    font-weight:900;
+}
+
+.floating-card{
+    position:absolute;
+    bottom:30px;
+    left:-40px;
+    padding:18px 22px;
+    border-radius:18px;
+    background:rgba(10,14,22,.8);
+    backdrop-filter:blur(20px);
+    border:1px solid var(--border);
+}
+
+.floating-card strong{
+    display:block;
+    font-size:25px;
+}
+
+.floating-card small{
+    color:var(--muted);
+}
+
+/* =========================
+   SECTION
+========================= */
+
+section{
+    max-width:1250px;
+    margin:auto;
+    padding:120px 6%;
+    position:relative;
+    z-index:1;
+}
+
+.section-label{
+    color:var(--blue2);
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    margin-bottom:15px;
+}
+
+.section-title{
+    font-size:clamp(40px,5vw,70px);
+    line-height:1;
+    letter-spacing:-3px;
+    margin-bottom:50px;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+}
+
+.about-text{
+    color:#aeb6c4;
+    line-height:1.9;
+    font-size:16px;
+}
+
+.skills{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-top:30px;
+}
+
+.skill{
+    padding:17px;
+    border:1px solid var(--border);
+    background:var(--glass);
+    border-radius:14px;
+    font-size:14px;
+}
+
+/* =========================
+   SERVICES
+========================= */
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.service{
+    padding:30px;
+    min-height:230px;
+    border:1px solid var(--border);
+    background:linear-gradient(145deg,
+        rgba(255,255,255,.045),
+        rgba(255,255,255,.015));
+    border-radius:var(--radius);
+    transition:.4s;
+}
+
+.service:hover{
+    transform:translateY(-8px);
+    border-color:rgba(22,135,255,.5);
+}
+
+.service-number{
+    color:var(--blue);
+    font-size:13px;
+}
+
+.service h3{
+    margin:45px 0 12px;
+    font-size:22px;
+}
+
+.service p{
+    color:var(--muted);
+    line-height:1.7;
+    font-size:14px;
+}
+
+/* =========================
+   PORTFOLIO
+========================= */
+
+.filters{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:30px;
+}
+
+.filter{
+    border:1px solid var(--border);
+    background:var(--glass);
+    color:#bfc5d0;
+    padding:9px 17px;
+    border-radius:100px;
+    cursor:pointer;
+}
+
+.filter.active,
+.filter:hover{
+    background:var(--blue);
+    color:white;
+}
+
+.portfolio{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.project{
+    aspect-ratio:1/1;
+    border-radius:22px;
+    overflow:hidden;
+    position:relative;
+    border:1px solid var(--border);
+    background:linear-gradient(145deg,#101722,#080b11);
+}
+
+.project:nth-child(2){
+    aspect-ratio:1/1.25;
+}
+
+.project:nth-child(5){
+    aspect-ratio:1/1.25;
+}
+
+.project-bg{
+    width:100%;
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:55px;
+    font-weight:900;
+    color:rgba(255,255,255,.08);
+    transition:.5s;
+}
+
+.project:hover .project-bg{
+    transform:scale(1.08);
+}
+
+.project-info{
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+    padding:25px;
+    background:linear-gradient(transparent,rgba(0,0,0,.9));
+}
+
+.project-info h3{
+    font-size:19px;
+}
+
+.project-info p{
+    color:#9ea6b5;
+    font-size:13px;
+    margin-top:5px;
+}
+
+/* =========================
+   PROCESS
+========================= */
+
+.process{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.process-item{
+    padding:25px;
+    border-top:1px solid var(--border);
+}
+
+.process-number{
+    font-size:40px;
+    color:rgba(22,135,255,.4);
+    font-weight:900;
+}
+
+.process h3{
+    margin:20px 0 10px;
+}
+
+.process p{
+    color:var(--muted);
+    line-height:1.6;
+    font-size:14px;
+}
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+    max-width:1250px;
+    margin:80px auto 120px;
+    padding:80px 6%;
+    border:1px solid var(--border);
+    border-radius:35px;
+    background:
+        radial-gradient(circle at 80% 20%,rgba(22,135,255,.18),transparent 30%),
+        linear-gradient(145deg,#0d141f,#080b11);
+    text-align:center;
+}
+
+.cta h2{
+    font-size:clamp(40px,6vw,80px);
+    letter-spacing:-4px;
+    line-height:1;
+}
+
+.cta p{
+    color:var(--muted);
+    margin:20px auto 30px;
+    max-width:550px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    border-top:1px solid var(--border);
+    padding:45px 6%;
+}
+
+.footer-inner{
+    max-width:1250px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    gap:30px;
+}
+
+.footer-brand{
+    font-weight:900;
+    letter-spacing:2px;
+}
+
+.footer-brand span{
+    color:var(--blue);
+}
+
+.footer-copy{
+    color:#6f7785;
+    font-size:13px;
+}
+
+/* =========================
+   REVEAL
+========================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(35px);
+    transition:1s ease;
+}
+
+.reveal.show{
+    opacity:1;
+    transform:none;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:850px){
+
+    .nav-links{
+        position:absolute;
+        top:75px;
+        left:6%;
+        right:6%;
+        display:none;
+        flex-direction:column;
+        gap:0;
+        background:rgba(7,10,16,.96);
+        backdrop-filter:blur(20px);
+        border:1px solid var(--border);
+        border-radius:20px;
+        padding:15px;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .nav-links a{
+        padding:14px;
+    }
+
+    .nav-btn{
+        display:none;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .hero{
+        grid-template-columns:1fr;
+        padding-top:130px;
+    }
+
+    .hero h1{
+        font-size:clamp(55px,17vw,90px);
+        letter-spacing:-4px;
+    }
+
+    .hero-visual{
+        max-width:500px;
+        margin:auto;
+        width:100%;
+    }
+
+    .about-grid{
+        grid-template-columns:1fr;
+        gap:35px;
+    }
+
+    .services{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .portfolio{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .process{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+@media(max-width:550px){
+
+    section{
+        padding:85px 5%;
+    }
+
+    .hero{
+        padding-left:5%;
+        padding-right:5%;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+    }
+
+    .btn{
+        text-align:center;
+    }
+
+    .services,
+    .portfolio,
+    .process{
+        grid-template-columns:1fr;
+    }
+
+    .project:nth-child(2),
+    .project:nth-child(5){
+        aspect-ratio:1/1;
+    }
+
+    .floating-card{
+        left:15px;
+    }
+
+    .footer-inner{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- NAVBAR -->
+
+<nav id="navbar">
+
+<div class="nav-inner">
+
+<a href="#" class="logo">
+KAZI<span>.</span>
+</a>
+
+<ul class="nav-links" id="navLinks">
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#work">Work</a></li>
+<li><a href="#process">Process</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+<a href="#contact" class="nav-btn">Let's Talk</a>
+
+<div class="menu" id="menu">☰</div>
+
+</div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<main>
+
+<div class="hero" id="home">
+
+<div class="hero-content reveal">
+
+<div class="hero-badge">
+<span class="dot"></span>
+Available for freelance projects
+</div>
+
+<h1>
+KAZI<br>
+<span>FORHAD</span>
+</h1>
+
+<div class="hero-subtitle">
+Graphic Designer & Bangla Typography Artist
+</div>
+
+<p class="hero-desc">
+I create meaningful visual identities, typography,
+branding and digital designs that turn ideas into
+memorable experiences.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#work" class="btn btn-primary">
+View My Work →
+</a>
+
+<a href="#contact" class="btn btn-outline">
+Hire Me
+</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-visual reveal">
+
+<div class="hero-card">
+
+<!-- এখানে আপনার ছবি বসাবেন -->
+
+<div class="hero-placeholder">
+KF
+</div>
+
+</div>
+
+<div class="floating-card">
+<strong>Creative</strong>
+<small>Design • Typography • Branding</small>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ABOUT -->
+
+<section id="about" class="reveal">
+
+<div class="section-label">About Me</div>
+
+<h2 class="section-title">
+Designing ideas<br>
+into <span style="color:#1687ff">visuals.</span>
+</h2>
+
+<div class="about-grid">
+
+<div>
+
+<p class="about-text">
+Assalamu Alaikum, I am Kazi Forhad, a Graphic Designer
+from Dhaka, Bangladesh. I am passionate about visual
+communication, branding and Bangla typography.
+</p>
+
+<br>
+
+<p class="about-text">
+My goal is simple — to create designs that look beautiful,
+communicate clearly and stay memorable.
+</p>
+
+</div>
+
+<div class="skills">
+
+<div class="skill">Graphic Design</div>
+<div class="skill">Bangla Typography</div>
+<div class="skill">Logo & Branding</div>
+<div class="skill">Poster Design</div>
+<div class="skill">Book Cover</div>
+<div class="skill">Social Media</div>
+<div class="skill">Thumbnail Design</div>
+<div class="skill">Creative Direction</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section id="services" class="reveal">
+
+<div class="section-label">What I Do</div>
+
+<h2 class="section-title">
+My <span style="color:#1687ff">Services</span>
+</h2>
+
+<div class="services">
+
+<div class="service">
+<span class="service-number">01</span>
+<h3>Logo & Branding</h3>
+<p>
+Memorable logos and complete visual identities
+designed for modern brands.
+</p>
+</div>
+
+<div class="service">
+<span class="service-number">02</span>
+<h3>Bangla Typography</h3>
+<p>
+Creative Bangla lettering and typography for
+posters, covers and campaigns.
+</p>
+</div>
+
+<div class="service">
+<span class="service-number">03</span>
+<h3>Poster Design</h3>
+<p>
+Professional promotional, cultural and event
+poster design.
+</p>
+</div>
+
+<div class="service">
+<span class="service-number">04</span>
+<h3>Book Cover</h3>
+<p>
+Concept-driven book covers that communicate
+the story before it is opened.
+</p>
+</div>
+
+<div class="service">
+<span class="service-number">05</span>
+<h3>Social Media</h3>
+<p>
+Modern social media creatives for brands,
+businesses and creators.
+</p>
+</div>
+
+<div class="service">
+<span class="service-number">06</span>
+<h3>Thumbnail Design</h3>
+<p>
+Professional YouTube thumbnails designed
+to attract attention.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PORTFOLIO -->
+
+<section id="work" class="reveal">
+
+<div class="section-label">Selected Work</div>
+
+<h2 class="section-title">
+Some of my <span style="color:#1687ff">works.</span>
+</h2>
+
+<div class="filters">
+
+<button class="filter active" data-filter="all">
+All
+</button>
+
+<button class="filter" data-filter="branding">
+Branding
+</button>
+
+<button class="filter" data-filter="typography">
+Typography
+</button>
+
+<button class="filter" data-filter="poster">
+Poster
+</button>
+
+<button class="filter" data-filter="cover">
+Book Cover
+</button>
+
+</div>
+
+
+<div class="portfolio">
+
+<div class="project" data-category="branding">
+<div class="project-bg">01</div>
+<div class="project-info">
+<h3>Brand Identity</h3>
+<p>Branding / Identity</p>
+</div>
+</div>
+
+<div class="project" data-category="typography">
+<div class="project-bg">02</div>
+<div class="project-info">
+<h3>Bangla Typography</h3>
+<p>Typography / Lettering</p>
+</div>
+</div>
+
+<div class="project" data-category="poster">
+<div class="project-bg">03</div>
+<div class="project-info">
+<h3>Creative Poster</h3>
+<p>Poster Design</p>
+</div>
+</div>
+
+<div class="project" data-category="cover">
+<div class="project-bg">04</div>
+<div class="project-info">
+<h3>Book Cover</h3>
+<p>Cover Design</p>
+</div>
+</div>
+
+<div class="project" data-category="typography">
+<div class="project-bg">05</div>
+<div class="project-info">
+<h3>Experimental Type</h3>
+<p>Typography</p>
+</div>
+</div>
+
+<div class="project" data-category="branding">
+<div class="project-bg">06</div>
+<div class="project-info">
+<h3>Visual Identity</h3>
+<p>Branding</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PROCESS -->
+
+<section id="process" class="reveal">
+
+<div class="section-label">How I Work</div>
+
+<h2 class="section-title">
+Simple process.<br>
+<span style="color:#1687ff">Strong results.</span>
+</h2>
+
+<div class="process">
+
+<div class="process-item">
+<div class="process-number">01</div>
+<h3>Discover</h3>
+<p>
+Understanding your brand, goals and audience.
+</p>
+</div>
+
+<div class="process-item">
+<div class="process-number">02</div>
+<h3>Concept</h3>
+<p>
+Creating a strong creative direction and visual idea.
+</p>
+</div>
+
+<div class="process-item">
+<div class="process-number">03</div>
+<h3>Design</h3>
+<p>
+Turning the concept into a polished visual solution.
+</p>
+</div>
+
+<div class="process-item">
+<div class="process-number">04</div>
+<h3>Deliver</h3>
+<p>
+Providing final professional files ready to use.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CTA -->
+
+<div class="cta reveal" id="contact">
+
+<div class="section-label">
+Let's Create Something
+</div>
+
+<h2>
+Have a project<br>
+in <span style="color:#1687ff">mind?</span>
+</h2>
+
+<p>
+Tell me about your project and let's turn your idea
+into something visually memorable.
+</p>
+
+<div class="hero-buttons" style="justify-content:center;">
+
+<a href="mailto:your@email.com"
+class="btn btn-primary">
+Email Me →
+</a>
+
+<a href="https://wa.me/8801000000000"
+class="btn btn-outline"
+target="_blank">
+WhatsApp
+</a>
+
+</div>
+
+</div>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-inner">
+
+<div class="footer-brand">
+KAZI<span>.</span>
+</div>
+
+<div class="footer-copy">
+© 2026 Kazi Forhad. All Rights Reserved.
+</div>
+
+<div class="footer-copy">
+Dhaka, Bangladesh
+</div>
+
+</div>
+
+</footer>
+
+
+<script>
+
+/* =========================
+   NAVBAR
+========================= */
+
+const navbar = document.getElementById("navbar");
+
+window.addEventListener("scroll",()=>{
+    if(window.scrollY > 50){
+        navbar.classList.add("scrolled");
+    }else{
+        navbar.classList.remove("scrolled");
+    }
+});
+
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+const menu = document.getElementById("menu");
+const navLinks = document.getElementById("navLinks");
+
+menu.addEventListener("click",()=>{
+    navLinks.classList.toggle("active");
+});
+
+document.querySelectorAll(".nav-links a").forEach(link=>{
+    link.addEventListener("click",()=>{
+        navLinks.classList.remove("active");
+    });
+});
+
+
+/* =========================
+   CURSOR
+========================= */
+
+const glow = document.getElementById("cursorGlow");
+
+document.addEventListener("mousemove",(e)=>{
+    glow.style.left = e.clientX+"px";
+    glow.style.top = e.clientY+"px";
+});
+
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+const observer = new IntersectionObserver(
+(entries)=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
+    });
+},
+{
+    threshold:.12
+});
+
+document.querySelectorAll(".reveal")
+.forEach(el=>observer.observe(el));
+
+
+/* =========================
+   PORTFOLIO FILTER
+========================= */
+
+const filters =
+document.querySelectorAll(".filter");
+
+const projects =
+document.querySelectorAll(".project");
+
+filters.forEach(filter=>{
+
+    filter.addEventListener("click",()=>{
+
+        filters.forEach(f=>
+            f.classList.remove("active")
+        );
+
+        filter.classList.add("active");
+
+        const category =
+            filter.dataset.filter;
+
+        projects.forEach(project=>{
+
+            if(
+                category === "all" ||
+                project.dataset.category === category
+            ){
+                project.style.display="block";
+            }else{
+                project.style.display="none";
+            }
+
+        });
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
