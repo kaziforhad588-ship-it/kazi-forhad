@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Kazi Forhad — Graphic Designer & Typography Artist</title>
+<title>KAZI FORHAD — Graphic Designer</title>
 
 <meta name="description"
-content="Kazi Forhad — Graphic Designer, Bangla Typography Artist and Creative Designer from Bangladesh.">
+content="Kazi Forhad — Graphic Designer & Bangla Typography Artist from Bangladesh.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,16 +40,16 @@ body.bn{
 
 :root{
     --blue:#1677ff;
-    --blue2:#00b7ff;
+    --cyan:#00b7ff;
     --dark:#05070d;
-    --card:rgba(255,255,255,.055);
-    --border:rgba(255,255,255,.1);
     --muted:#a7adba;
+    --border:rgba(255,255,255,.10);
+    --card:rgba(255,255,255,.055);
 }
 
 a{
-    color:inherit;
     text-decoration:none;
+    color:inherit;
 }
 
 .container{
@@ -57,7 +57,7 @@ a{
     margin:auto;
 }
 
-/* NAVBAR */
+/* ================= NAVBAR ================= */
 
 header{
     position:fixed;
@@ -65,8 +65,8 @@ header{
     left:0;
     width:100%;
     z-index:1000;
+    background:rgba(5,7,13,.78);
     backdrop-filter:blur(20px);
-    background:rgba(5,7,13,.72);
     border-bottom:1px solid rgba(255,255,255,.07);
 }
 
@@ -78,53 +78,52 @@ header{
 }
 
 .logo{
-    font-size:22px;
+    font-size:21px;
     font-weight:800;
     letter-spacing:2px;
 }
 
 .logo span{
-    color:var(--blue2);
+    color:var(--cyan);
 }
 
 .nav-links{
     display:flex;
     align-items:center;
-    gap:28px;
+    gap:25px;
 }
 
-.nav-links a{
+.nav-links>a{
     color:#cbd0da;
     font-size:14px;
     transition:.3s;
 }
 
-.nav-links a:hover{
+.nav-links>a:hover{
     color:#fff;
 }
 
 .lang{
     display:flex;
-    gap:5px;
+    gap:4px;
     padding:4px;
     border:1px solid var(--border);
     border-radius:30px;
-    background:rgba(255,255,255,.04);
 }
 
 .lang button{
     border:0;
     background:transparent;
     color:#aaa;
-    padding:7px 12px;
+    padding:7px 11px;
     border-radius:20px;
     cursor:pointer;
-    font-weight:600;
+    font-weight:700;
 }
 
 .lang button.active{
     background:var(--blue);
-    color:white;
+    color:#fff;
 }
 
 .menu{
@@ -133,13 +132,13 @@ header{
     cursor:pointer;
 }
 
-/* HERO */
+/* ================= HERO ================= */
 
 .hero{
     min-height:100vh;
     display:flex;
     align-items:center;
-    padding-top:100px;
+    padding-top:110px;
     position:relative;
 }
 
@@ -150,55 +149,55 @@ header{
     height:500px;
     background:var(--blue);
     filter:blur(180px);
-    opacity:.18;
-    top:20%;
+    opacity:.16;
     left:-180px;
+    top:15%;
 }
 
 .hero-grid{
     display:grid;
     grid-template-columns:1.1fr .9fr;
-    gap:70px;
+    gap:65px;
     align-items:center;
 }
 
 .badge{
-    display:inline-flex;
+    display:inline-block;
     padding:8px 15px;
     border:1px solid rgba(22,119,255,.4);
     background:rgba(22,119,255,.08);
     border-radius:30px;
     color:#8ec2ff;
-    font-size:13px;
+    font-size:12px;
     margin-bottom:22px;
 }
 
 .hero h1{
-    font-size:clamp(48px,7vw,88px);
+    font-size:clamp(50px,7vw,88px);
     line-height:.98;
     letter-spacing:-4px;
     margin-bottom:24px;
 }
 
 .hero h1 span{
-    color:var(--blue2);
+    color:var(--cyan);
 }
 
 .hero p{
     color:var(--muted);
     font-size:17px;
     max-width:620px;
-    margin-bottom:32px;
+    margin-bottom:30px;
 }
 
 .buttons{
     display:flex;
-    gap:14px;
+    gap:12px;
     flex-wrap:wrap;
 }
 
 .btn{
-    padding:13px 22px;
+    padding:13px 21px;
     border-radius:12px;
     font-weight:700;
     font-size:14px;
@@ -206,25 +205,25 @@ header{
     transition:.3s;
 }
 
-.btn-primary{
-    background:var(--blue);
-    border-color:var(--blue);
-}
-
 .btn:hover{
     transform:translateY(-3px);
 }
 
-.btn-outline{
+.primary{
+    background:var(--blue);
+    border-color:var(--blue);
+}
+
+.outline{
     background:rgba(255,255,255,.04);
 }
 
-/* HERO IMAGE */
+/* ================= HERO PHOTO ================= */
 
 .hero-photo{
-    position:relative;
     display:flex;
     justify-content:center;
+    position:relative;
 }
 
 .hero-photo:before{
@@ -234,70 +233,70 @@ header{
     height:350px;
     background:var(--blue);
     filter:blur(100px);
-    opacity:.18;
+    opacity:.20;
 }
 
 .hero-photo img{
     position:relative;
-    width:min(420px,100%);
-    aspect-ratio:4/5;
+    width:min(430px,100%);
+    aspect-ratio:1/1;
     object-fit:cover;
     border-radius:30px;
     border:1px solid rgba(255,255,255,.12);
-    box-shadow:0 30px 80px rgba(0,0,0,.5);
+    box-shadow:0 30px 80px rgba(0,0,0,.55);
 }
 
-/* SECTION */
+/* ================= SECTION ================= */
 
 section{
-    padding:110px 0;
-}
-
-.section-title{
-    margin-bottom:50px;
+    padding:105px 0;
 }
 
 .eyebrow{
-    color:var(--blue2);
+    color:var(--cyan);
     text-transform:uppercase;
     letter-spacing:3px;
     font-size:12px;
-    font-weight:700;
+    font-weight:800;
     margin-bottom:10px;
 }
 
+.section-title{
+    margin-bottom:45px;
+}
+
 .section-title h2{
-    font-size:clamp(35px,5vw,55px);
+    font-size:clamp(34px,5vw,54px);
     line-height:1.1;
 }
 
 .section-title p{
     color:var(--muted);
-    max-width:650px;
+    max-width:680px;
     margin-top:15px;
 }
 
-/* ABOUT */
+/* ================= ABOUT ================= */
 
 .about-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:60px;
+    gap:55px;
 }
 
 .about-text p{
     color:var(--muted);
-    margin-bottom:20px;
+    margin-bottom:18px;
 }
 
 .stats{
     display:grid;
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:1fr 1fr;
     gap:15px;
 }
 
 .stat{
-    padding:30px;
+    padding:27px;
     border:1px solid var(--border);
     background:var(--card);
     border-radius:20px;
@@ -305,44 +304,44 @@ section{
 
 .stat strong{
     display:block;
-    font-size:34px;
-    color:var(--blue2);
+    font-size:32px;
+    color:var(--cyan);
 }
 
 .stat span{
     color:#aeb4c0;
-    font-size:14px;
+    font-size:13px;
 }
 
-/* SERVICES */
+/* ================= SERVICES ================= */
 
 .cards{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:18px;
+    gap:17px;
 }
 
 .card{
-    padding:30px;
+    padding:28px;
     border-radius:22px;
     border:1px solid var(--border);
     background:var(--card);
-    transition:.4s;
+    transition:.35s;
 }
 
 .card:hover{
-    transform:translateY(-8px);
+    transform:translateY(-7px);
     border-color:rgba(22,119,255,.5);
-    background:rgba(22,119,255,.07);
+    background:rgba(22,119,255,.06);
 }
 
 .icon{
-    font-size:30px;
-    margin-bottom:20px;
+    font-size:29px;
+    margin-bottom:15px;
 }
 
 .card h3{
-    margin-bottom:10px;
+    margin-bottom:8px;
 }
 
 .card p{
@@ -350,46 +349,25 @@ section{
     font-size:14px;
 }
 
-/* PORTFOLIO */
-
-.filters{
-    display:flex;
-    gap:8px;
-    flex-wrap:wrap;
-    margin-bottom:25px;
-}
-
-.filter{
-    border:1px solid var(--border);
-    background:transparent;
-    color:#aaa;
-    padding:8px 15px;
-    border-radius:30px;
-    cursor:pointer;
-}
-
-.filter.active,
-.filter:hover{
-    background:var(--blue);
-    color:#fff;
-}
+/* ================= PORTFOLIO ================= */
 
 .portfolio{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:18px;
+    gap:17px;
 }
 
 .work{
-    min-height:280px;
-    border-radius:22px;
+    min-height:250px;
+    border-radius:20px;
     border:1px solid var(--border);
     background:linear-gradient(135deg,#0d1425,#080a10);
     display:flex;
     align-items:center;
     justify-content:center;
+    color:#697487;
+    font-size:13px;
     overflow:hidden;
-    position:relative;
 }
 
 .work img{
@@ -398,12 +376,7 @@ section{
     object-fit:cover;
 }
 
-.work span{
-    color:#6f7888;
-    font-size:14px;
-}
-
-/* PROCESS */
+/* ================= PROCESS ================= */
 
 .process{
     display:grid;
@@ -412,19 +385,19 @@ section{
 }
 
 .step{
-    padding:25px;
+    padding:24px;
     border-left:2px solid var(--blue);
     background:rgba(255,255,255,.035);
 }
 
 .step-number{
-    color:var(--blue2);
+    color:var(--cyan);
     font-weight:800;
     font-size:13px;
 }
 
 .step h3{
-    margin:10px 0;
+    margin:8px 0;
 }
 
 .step p{
@@ -432,21 +405,25 @@ section{
     font-size:13px;
 }
 
-/* CTA */
+/* ================= CONTACT ================= */
 
 .cta{
-    padding:70px 30px;
-    border-radius:30px;
+    padding:65px 25px;
     text-align:center;
+    border-radius:30px;
     background:
-    radial-gradient(circle at center,rgba(22,119,255,.25),transparent 55%),
+    radial-gradient(
+        circle at center,
+        rgba(22,119,255,.23),
+        transparent 55%
+    ),
     rgba(255,255,255,.04);
     border:1px solid var(--border);
 }
 
 .cta h2{
-    font-size:clamp(35px,5vw,60px);
-    margin-bottom:15px;
+    font-size:clamp(34px,5vw,58px);
+    margin-bottom:12px;
 }
 
 .cta p{
@@ -454,10 +431,10 @@ section{
     margin-bottom:25px;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 footer{
-    padding:40px 0;
+    padding:38px 0;
     border-top:1px solid var(--border);
 }
 
@@ -473,26 +450,26 @@ footer{
     font-size:13px;
 }
 
-/* WHATSAPP */
+/* ================= WHATSAPP ================= */
 
 .whatsapp{
     position:fixed;
     right:20px;
     bottom:20px;
-    width:55px;
-    height:55px;
+    width:56px;
+    height:56px;
     border-radius:50%;
     display:flex;
     align-items:center;
     justify-content:center;
     background:#25D366;
-    color:white;
-    font-size:25px;
+    color:#fff;
+    font-size:26px;
     z-index:999;
     box-shadow:0 10px 30px rgba(0,0,0,.4);
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 
 @media(max-width:850px){
 
@@ -502,7 +479,7 @@ footer{
         left:0;
         width:100%;
         background:#080b12;
-        padding:25px;
+        padding:22px;
         flex-direction:column;
         display:none;
     }
@@ -521,15 +498,15 @@ footer{
     }
 
     .hero{
-        padding-top:130px;
-    }
-
-    .hero h1{
-        letter-spacing:-2px;
+        padding-top:125px;
     }
 
     .hero-photo{
         order:-1;
+    }
+
+    .hero-photo img{
+        width:min(380px,90vw);
     }
 
     .cards{
@@ -551,114 +528,186 @@ footer{
         padding:80px 0;
     }
 
-    .portfolio{
-        grid-template-columns:1fr;
-    }
-
+    .portfolio,
     .process{
         grid-template-columns:1fr;
     }
 
-    .stats{
-        grid-template-columns:1fr 1fr;
+    .hero h1{
+        letter-spacing:-2px;
     }
 
-    .hero-photo img{
-        width:85%;
+    .stats{
+        gap:10px;
+    }
+
+    .stat{
+        padding:20px;
     }
 }
 
 </style>
 </head>
 
+
 <body>
+
+<!-- ================= NAVBAR ================= -->
 
 <header>
 
 <div class="container nav">
 
-<a href="#" class="logo">KAZI <span>FORHAD</span></a>
+<a class="logo" href="#home">
+KAZI <span>FORHAD</span>
+</a>
 
 <div class="nav-links" id="navLinks">
 
-<a href="#home" data-en="Home" data-bn="হোম">Home</a>
+<a href="#home"
+data-en="Home"
+data-bn="হোম">
+Home
+</a>
 
-<a href="#about" data-en="About" data-bn="আমার সম্পর্কে">About</a>
+<a href="#about"
+data-en="About"
+data-bn="আমার সম্পর্কে">
+About
+</a>
 
-<a href="#services" data-en="Services" data-bn="সেবাসমূহ">Services</a>
+<a href="#services"
+data-en="Services"
+data-bn="সেবাসমূহ">
+Services
+</a>
 
-<a href="#portfolio" data-en="Portfolio" data-bn="পোর্টফোলিও">Portfolio</a>
+<a href="#portfolio"
+data-en="Portfolio"
+data-bn="পোর্টফোলিও">
+Portfolio
+</a>
 
-<a href="#process" data-en="Process" data-bn="কাজের প্রক্রিয়া">Process</a>
+<a href="#process"
+data-en="Process"
+data-bn="কাজের প্রক্রিয়া">
+Process
+</a>
 
-<a href="#contact" data-en="Contact" data-bn="যোগাযোগ">Contact</a>
+<a href="#contact"
+data-en="Contact"
+data-bn="যোগাযোগ">
+Contact
+</a>
 
 <div class="lang">
 
-<button id="enBtn" class="active" onclick="setLanguage('en')">EN</button>
+<button
+id="enBtn"
+class="active"
+onclick="setLanguage('en')">
+EN
+</button>
 
-<button id="bnBtn" onclick="setLanguage('bn')">বাংলা</button>
+<button
+id="bnBtn"
+onclick="setLanguage('bn')">
+বাংলা
+</button>
 
 </div>
 
 </div>
 
-<div class="menu" onclick="toggleMenu()">☰</div>
+<div
+class="menu"
+onclick="toggleMenu()">
+☰
+</div>
 
 </div>
 
 </header>
 
 
+<!-- ================= MAIN ================= -->
+
 <main>
+
 
 <!-- HERO -->
 
-<section class="hero" id="home">
+<section
+class="hero"
+id="home">
 
 <div class="container hero-grid">
 
 <div>
 
-<div class="badge"
+<div
+class="badge"
 data-en="GRAPHIC DESIGNER • TYPOGRAPHY ARTIST"
 data-bn="গ্রাফিক ডিজাইনার • টাইপোগ্রাফি শিল্পী">
+
 GRAPHIC DESIGNER • TYPOGRAPHY ARTIST
+
 </div>
 
+
 <h1>
-<span>KAZI</span><br>
+
+<span>KAZI</span>
+<br>
 FORHAD
+
 </h1>
+
 
 <p
 data-en="Assalamu Alaikum! I am Kazi Forhad, a Graphic Designer and Bangla Typography Artist from Bangladesh."
 data-bn="আসসালামু আলাইকুম! আমি কাজী ফরহাদ। আমি বাংলাদেশের একজন গ্রাফিক ডিজাইনার ও বাংলা টাইপোগ্রাফি শিল্পী।">
+
 Assalamu Alaikum! I am Kazi Forhad, a Graphic Designer and Bangla Typography Artist from Bangladesh.
+
 </p>
+
 
 <div class="buttons">
 
-<a href="#portfolio" class="btn btn-primary"
+<a
+href="#portfolio"
+class="btn primary"
 data-en="View My Work"
 data-bn="আমার কাজ দেখুন">
+
 View My Work
+
 </a>
 
-<a href="#contact" class="btn btn-outline"
+
+<a
+href="mailto:kaziforhad588@gmail.com"
+class="btn outline"
 data-en="Hire Me"
 data-bn="কাজের জন্য যোগাযোগ করুন">
+
 Hire Me
+
 </a>
 
 </div>
 
 </div>
 
+
+<!-- YOUR PHOTO -->
 
 <div class="hero-photo">
 
-<img src="forhad.jpg" alt="Kazi Forhad">
+<img
+src="99063.jpg"
+alt="Kazi Forhad">
 
 </div>
 
@@ -667,7 +716,7 @@ Hire Me
 </section>
 
 
-<!-- ABOUT -->
+<!-- ================= ABOUT ================= -->
 
 <section id="about">
 
@@ -675,22 +724,31 @@ Hire Me
 
 <div class="section-title">
 
-<div class="eyebrow"
+<div
+class="eyebrow"
 data-en="ABOUT ME"
 data-bn="আমার সম্পর্কে">
+
 ABOUT ME
+
 </div>
+
 
 <h2
 data-en="Designing ideas into visual experiences."
 data-bn="ভাবনাকে রূপ দিই দৃশ্যমান ডিজাইনে।">
+
 Designing ideas into visual experiences.
+
 </h2>
+
 
 <p
 data-en="Creative design is not just about making things beautiful. It is about communicating an idea clearly and memorably."
 data-bn="ক্রিয়েটিভ ডিজাইন শুধু সুন্দর কিছু তৈরি করা নয়; একটি ধারণাকে সুন্দর, স্পষ্ট ও স্মরণীয়ভাবে প্রকাশ করাই আমার লক্ষ্য।">
+
 Creative design is not just about making things beautiful.
+
 </p>
 
 </div>
@@ -703,13 +761,18 @@ Creative design is not just about making things beautiful.
 <p
 data-en="I work on graphic design, branding, Bangla typography, social media design, posters, book covers and creative visual projects."
 data-bn="আমি গ্রাফিক ডিজাইন, ব্র্যান্ডিং, বাংলা টাইপোগ্রাফি, সোশ্যাল মিডিয়া ডিজাইন, পোস্টার, বইয়ের প্রচ্ছদসহ বিভিন্ন ক্রিয়েটিভ ভিজ্যুয়াল প্রজেক্টে কাজ করি।">
+
 I work on graphic design, branding, Bangla typography, social media design, posters, book covers and creative visual projects.
+
 </p>
+
 
 <p
 data-en="My goal is to create clean, meaningful and visually powerful designs that connect with people."
 data-bn="আমার লক্ষ্য হলো এমন পরিষ্কার, অর্থবহ ও শক্তিশালী ডিজাইন তৈরি করা, যা মানুষের সঙ্গে সংযোগ তৈরি করে।">
+
 My goal is to create clean, meaningful and visually powerful designs that connect with people.
+
 </p>
 
 </div>
@@ -724,10 +787,13 @@ My goal is to create clean, meaningful and visually powerful designs that connec
 <span
 data-en="Design Services"
 data-bn="ডিজাইন সার্ভিস">
+
 Design Services
+
 </span>
 
 </div>
+
 
 <div class="stat">
 
@@ -736,10 +802,13 @@ Design Services
 <span
 data-en="Creative Ideas"
 data-bn="ক্রিয়েটিভ আইডিয়া">
+
 Creative Ideas
+
 </span>
 
 </div>
+
 
 <div class="stat">
 
@@ -748,10 +817,13 @@ Creative Ideas
 <span
 data-en="Creative Mind"
 data-bn="ক্রিয়েটিভ চিন্তা">
+
 Creative Mind
+
 </span>
 
 </div>
+
 
 <div class="stat">
 
@@ -760,7 +832,9 @@ Creative Mind
 <span
 data-en="Dedication"
 data-bn="নিবেদন">
+
 Dedication
+
 </span>
 
 </div>
@@ -774,7 +848,7 @@ Dedication
 </section>
 
 
-<!-- SERVICES -->
+<!-- ================= SERVICES ================= -->
 
 <section id="services">
 
@@ -782,22 +856,29 @@ Dedication
 
 <div class="section-title">
 
-<div class="eyebrow"
+<div
+class="eyebrow"
 data-en="SERVICES"
 data-bn="সেবাসমূহ">
+
 SERVICES
+
 </div>
+
 
 <h2
 data-en="What I can do for you."
 data-bn="আপনার জন্য আমি যা করতে পারি।">
+
 What I can do for you.
+
 </h2>
 
 </div>
 
 
 <div class="cards">
+
 
 <div class="card">
 
@@ -806,13 +887,17 @@ What I can do for you.
 <h3
 data-en="Logo & Branding"
 data-bn="লোগো ও ব্র্যান্ডিং">
+
 Logo & Branding
+
 </h3>
 
 <p
-data-en="Professional visual identities, logos and complete brand solutions."
+data-en="Professional logos, visual identities and complete brand solutions."
 data-bn="প্রফেশনাল লোগো, ভিজ্যুয়াল আইডেন্টিটি ও সম্পূর্ণ ব্র্যান্ডিং সলিউশন।">
-Professional visual identities, logos and complete brand solutions.
+
+Professional logos, visual identities and complete brand solutions.
+
 </p>
 
 </div>
@@ -825,13 +910,17 @@ Professional visual identities, logos and complete brand solutions.
 <h3
 data-en="Social Media Design"
 data-bn="সোশ্যাল মিডিয়া ডিজাইন">
+
 Social Media Design
+
 </h3>
 
 <p
-data-en="Creative and engaging designs for Facebook, Instagram and other platforms."
+data-en="Creative designs for Facebook, Instagram and other platforms."
 data-bn="Facebook, Instagram সহ বিভিন্ন সোশ্যাল মিডিয়ার জন্য আকর্ষণীয় ডিজাইন।">
-Creative and engaging designs for Facebook, Instagram and other platforms.
+
+Creative designs for Facebook, Instagram and other platforms.
+
 </p>
 
 </div>
@@ -844,13 +933,17 @@ Creative and engaging designs for Facebook, Instagram and other platforms.
 <h3
 data-en="Bangla Typography"
 data-bn="বাংলা টাইপোগ্রাফি">
+
 Bangla Typography
+
 </h3>
 
 <p
-data-en="Unique Bangla lettering and typography artwork for creative projects."
-data-bn="ক্রিয়েটিভ প্রজেক্টের জন্য ইউনিক বাংলা লেটারিং ও টাইপোগ্রাফি ডিজাইন।">
-Unique Bangla lettering and typography artwork for creative projects.
+data-en="Unique Bangla lettering and typography artwork."
+data-bn="ইউনিক বাংলা লেটারিং ও টাইপোগ্রাফি ডিজাইন।">
+
+Unique Bangla lettering and typography artwork.
+
 </p>
 
 </div>
@@ -863,13 +956,17 @@ Unique Bangla lettering and typography artwork for creative projects.
 <h3
 data-en="Poster Design"
 data-bn="পোস্টার ডিজাইন">
+
 Poster Design
+
 </h3>
 
 <p
-data-en="Modern promotional posters designed to communicate your message."
-data-bn="আপনার বার্তা সুন্দরভাবে উপস্থাপনের জন্য আধুনিক প্রমোশনাল পোস্টার।">
-Modern promotional posters designed to communicate your message.
+data-en="Modern promotional posters for your message."
+data-bn="আপনার বার্তা সুন্দরভাবে উপস্থাপনের জন্য আধুনিক পোস্টার।">
+
+Modern promotional posters for your message.
+
 </p>
 
 </div>
@@ -882,13 +979,17 @@ Modern promotional posters designed to communicate your message.
 <h3
 data-en="Book Cover"
 data-bn="বইয়ের প্রচ্ছদ">
+
 Book Cover
+
 </h3>
 
 <p
-data-en="Creative and meaningful covers for books, poetry and publications."
-data-bn="বই, কবিতা ও বিভিন্ন প্রকাশনার জন্য সৃজনশীল প্রচ্ছদ ডিজাইন।">
-Creative and meaningful covers for books, poetry and publications.
+data-en="Creative covers for books, poetry and publications."
+data-bn="বই, কবিতা ও বিভিন্ন প্রকাশনার জন্য সৃজনশীল প্রচ্ছদ।">
+
+Creative covers for books, poetry and publications.
+
 </p>
 
 </div>
@@ -901,13 +1002,17 @@ Creative and meaningful covers for books, poetry and publications.
 <h3
 data-en="YouTube Thumbnail"
 data-bn="ইউটিউব থাম্বনেইল">
+
 YouTube Thumbnail
+
 </h3>
 
 <p
-data-en="Eye-catching thumbnails designed to increase attention and clicks."
-data-bn="দর্শকের নজর কাড়ার জন্য আকর্ষণীয় ও প্রফেশনাল থাম্বনেইল ডিজাইন।">
-Eye-catching thumbnails designed to increase attention and clicks.
+data-en="Eye-catching thumbnails designed for attention and clicks."
+data-bn="দর্শকের নজর কাড়ার জন্য আকর্ষণীয় থাম্বনেইল।">
+
+Eye-catching thumbnails designed for attention and clicks.
+
 </p>
 
 </div>
@@ -919,7 +1024,7 @@ Eye-catching thumbnails designed to increase attention and clicks.
 </section>
 
 
-<!-- PORTFOLIO -->
+<!-- ================= PORTFOLIO ================= -->
 
 <section id="portfolio">
 
@@ -927,28 +1032,23 @@ Eye-catching thumbnails designed to increase attention and clicks.
 
 <div class="section-title">
 
-<div class="eyebrow"
+<div
+class="eyebrow"
 data-en="PORTFOLIO"
 data-bn="পোর্টফোলিও">
+
 PORTFOLIO
+
 </div>
+
 
 <h2
 data-en="Selected creative works."
 data-bn="নির্বাচিত কিছু কাজ।">
+
 Selected creative works.
+
 </h2>
-
-</div>
-
-
-<div class="filters">
-
-<button class="filter active">All</button>
-<button class="filter">Branding</button>
-<button class="filter">Typography</button>
-<button class="filter">Poster</button>
-<button class="filter">Book Cover</button>
 
 </div>
 
@@ -956,27 +1056,27 @@ Selected creative works.
 <div class="portfolio">
 
 <div class="work">
-<span>YOUR DESIGN 01</span>
+YOUR DESIGN 01
 </div>
 
 <div class="work">
-<span>YOUR DESIGN 02</span>
+YOUR DESIGN 02
 </div>
 
 <div class="work">
-<span>YOUR DESIGN 03</span>
+YOUR DESIGN 03
 </div>
 
 <div class="work">
-<span>YOUR DESIGN 04</span>
+YOUR DESIGN 04
 </div>
 
 <div class="work">
-<span>YOUR DESIGN 05</span>
+YOUR DESIGN 05
 </div>
 
 <div class="work">
-<span>YOUR DESIGN 06</span>
+YOUR DESIGN 06
 </div>
 
 </div>
@@ -986,7 +1086,7 @@ Selected creative works.
 </section>
 
 
-<!-- PROCESS -->
+<!-- ================= PROCESS ================= -->
 
 <section id="process">
 
@@ -994,16 +1094,22 @@ Selected creative works.
 
 <div class="section-title">
 
-<div class="eyebrow"
+<div
+class="eyebrow"
 data-en="PROCESS"
 data-bn="কাজের প্রক্রিয়া">
+
 PROCESS
+
 </div>
+
 
 <h2
 data-en="Simple process. Better results."
 data-bn="সহজ প্রক্রিয়া। আরও ভালো ফলাফল।">
+
 Simple process. Better results.
+
 </h2>
 
 </div>
@@ -1011,20 +1117,27 @@ Simple process. Better results.
 
 <div class="process">
 
+
 <div class="step">
 
-<div class="step-number">01</div>
+<div class="step-number">
+01
+</div>
 
 <h3
 data-en="Discover"
 data-bn="বুঝে নেওয়া">
+
 Discover
+
 </h3>
 
 <p
 data-en="Understanding your idea, goals and requirements."
 data-bn="আপনার ধারণা, লক্ষ্য ও প্রয়োজনীয়তা বুঝে নেওয়া।">
+
 Understanding your idea, goals and requirements.
+
 </p>
 
 </div>
@@ -1032,18 +1145,24 @@ Understanding your idea, goals and requirements.
 
 <div class="step">
 
-<div class="step-number">02</div>
+<div class="step-number">
+02
+</div>
 
 <h3
 data-en="Concept"
 data-bn="কনসেপ্ট">
+
 Concept
+
 </h3>
 
 <p
-data-en="Developing the right creative direction and visual concept."
+data-en="Developing the right creative direction."
 data-bn="সঠিক ক্রিয়েটিভ দিক ও ভিজ্যুয়াল কনসেপ্ট তৈরি করা।">
-Developing the right creative direction and visual concept.
+
+Developing the right creative direction.
+
 </p>
 
 </div>
@@ -1051,18 +1170,24 @@ Developing the right creative direction and visual concept.
 
 <div class="step">
 
-<div class="step-number">03</div>
+<div class="step-number">
+03
+</div>
 
 <h3
 data-en="Design"
 data-bn="ডিজাইন">
+
 Design
+
 </h3>
 
 <p
-data-en="Turning the concept into a polished and professional design."
+data-en="Turning the concept into a polished design."
 data-bn="কনসেপ্টকে একটি পরিপূর্ণ ও প্রফেশনাল ডিজাইনে রূপ দেওয়া।">
-Turning the concept into a polished and professional design.
+
+Turning the concept into a polished design.
+
 </p>
 
 </div>
@@ -1070,18 +1195,24 @@ Turning the concept into a polished and professional design.
 
 <div class="step">
 
-<div class="step-number">04</div>
+<div class="step-number">
+04
+</div>
 
 <h3
 data-en="Deliver"
 data-bn="ডেলিভারি">
+
 Deliver
+
 </h3>
 
 <p
-data-en="Final files are prepared and delivered according to your needs."
+data-en="Final files are prepared and delivered."
 data-bn="আপনার প্রয়োজন অনুযায়ী ফাইনাল ফাইল প্রস্তুত ও ডেলিভারি করা।">
-Final files are prepared and delivered according to your needs.
+
+Final files are prepared and delivered.
+
 </p>
 
 </div>
@@ -1093,7 +1224,7 @@ Final files are prepared and delivered according to your needs.
 </section>
 
 
-<!-- CONTACT -->
+<!-- ================= CONTACT ================= -->
 
 <section id="contact">
 
@@ -1101,37 +1232,61 @@ Final files are prepared and delivered according to your needs.
 
 <div class="cta">
 
-<div class="eyebrow"
+<div
+class="eyebrow"
 data-en="LET'S WORK TOGETHER"
 data-bn="চলুন একসাথে কাজ করি">
+
 LET'S WORK TOGETHER
+
 </div>
+
 
 <h2
 data-en="Have a project in mind?"
 data-bn="আপনার কি কোনো প্রজেক্ট আছে?">
+
 Have a project in mind?
+
 </h2>
+
 
 <p
 data-en="Let's turn your idea into something visually powerful."
 data-bn="আপনার আইডিয়াকে একটি শক্তিশালী ভিজ্যুয়াল ডিজাইনে রূপ দিই।">
+
 Let's turn your idea into something visually powerful.
+
 </p>
 
-<div class="buttons" style="justify-content:center;">
 
-<a href="mailto:kaziforhad588@email.com" class="btn btn-primary"
+<div
+class="buttons"
+style="justify-content:center">
+
+
+<a
+href="mailto:kaziforhad588@gmail.com"
+class="btn primary"
 data-en="Email Me"
 data-bn="ইমেইল করুন">
+
 Email Me
+
 </a>
 
-<a href="https://wa.me/8801741224913" class="btn btn-outline"
+
+<a
+href="https://wa.me/8801741224913"
+target="_blank"
+class="btn outline"
 data-en="WhatsApp"
 data-bn="হোয়াটসঅ্যাপ">
+
 WhatsApp
+
 </a>
+
 
 </div>
 
@@ -1141,19 +1296,27 @@ WhatsApp
 
 </section>
 
+
 </main>
 
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
 <div class="container footer">
 
-<p>© 2026 KAZI FORHAD. All Rights Reserved.</p>
+<p>
+© 2026 KAZI FORHAD. All Rights Reserved.
+</p>
+
 
 <p
 data-en="Graphic Designer • Bangla Typography Artist"
 data-bn="গ্রাফিক ডিজাইনার • বাংলা টাইপোগ্রাফি শিল্পী">
+
 Graphic Designer • Bangla Typography Artist
+
 </p>
 
 </div>
@@ -1161,87 +1324,97 @@ Graphic Designer • Bangla Typography Artist
 </footer>
 
 
-<a href="https://wa.me/8801000000000"
-class="whatsapp"
-target="_blank">☏</a>
+<!-- WHATSAPP BUTTON -->
 
+<a
+class="whatsapp"
+href="https://wa.me/8801741224913"
+target="_blank"
+aria-label="WhatsApp">
+
+☏
+
+</a>
+
+
+<!-- ================= JAVASCRIPT ================= -->
 
 <script>
 
-/* LANGUAGE */
-
 function setLanguage(lang){
 
-    document.querySelectorAll("[data-en]").forEach(el=>{
+    document
+    .querySelectorAll("[data-en]")
+    .forEach(function(el){
 
-        el.textContent = el.getAttribute("data-" + lang);
+        el.textContent =
+        el.getAttribute("data-" + lang);
 
     });
 
-    document.getElementById("enBtn")
-    .classList.toggle("active",lang==="en");
 
-    document.getElementById("bnBtn")
-    .classList.toggle("active",lang==="bn");
+    document
+    .getElementById("enBtn")
+    .classList
+    .toggle("active",lang === "en");
+
+
+    document
+    .getElementById("bnBtn")
+    .classList
+    .toggle("active",lang === "bn");
+
 
     document.documentElement.lang = lang;
 
-    document.body.classList.toggle("bn",lang==="bn");
+    document.body.classList
+    .toggle("bn",lang === "bn");
 
-    localStorage.setItem("language",lang);
+
+    localStorage.setItem(
+        "language",
+        lang
+    );
 }
 
-
-/* MOBILE MENU */
 
 function toggleMenu(){
 
-    document.getElementById("navLinks")
-    .classList.toggle("show");
+    document
+    .getElementById("navLinks")
+    .classList
+    .toggle("show");
 
 }
 
 
-/* REMEMBER LANGUAGE */
+document
+.querySelectorAll(".nav-links>a")
+.forEach(function(link){
+
+    link.addEventListener(
+        "click",
+        function(){
+
+            document
+            .getElementById("navLinks")
+            .classList
+            .remove("show");
+
+        }
+    );
+
+});
+
 
 const savedLanguage =
 localStorage.getItem("language");
 
 if(savedLanguage){
+
     setLanguage(savedLanguage);
+
 }
-
-
-/* CLOSE MOBILE MENU */
-
-document.querySelectorAll(".nav-links a")
-.forEach(link=>{
-
-    link.addEventListener("click",()=>{
-
-        document.getElementById("navLinks")
-        .classList.remove("show");
-
-    });
-
-});
-
-
-/* PORTFOLIO FILTER */
-
-document.querySelectorAll(".filter")
-.forEach(button=>{
-
-    button.addEventListener("click",()=>{
-
-        document.querySelectorAll(".filter")
-        .forEach(btn=>btn.classList.remove("active"));
-
-        button.classList.add("active");
-
-    });
-
-});
 
 </script>
 
