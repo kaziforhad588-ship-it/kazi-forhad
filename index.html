@@ -7,31 +7,14 @@
 <title>Kazi Forhad — Graphic Designer & Typography Artist</title>
 
 <meta name="description"
-content="Kazi Forhad — Graphic Designer and Bangla Typography Artist from Dhaka, Bangladesh.">
+content="Kazi Forhad — Graphic Designer, Bangla Typography Artist and Creative Designer from Bangladesh.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+Bengali:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-
-/* =========================
-   ROOT
-========================= */
-
-:root{
-    --bg:#05070b;
-    --bg2:#080c14;
-    --card:#0d121c;
-    --text:#f5f7fb;
-    --muted:#929aaa;
-    --blue:#1687ff;
-    --blue2:#00b7ff;
-    --border:rgba(255,255,255,.09);
-    --glass:rgba(255,255,255,.045);
-    --radius:24px;
-}
 
 *{
     margin:0;
@@ -44,13 +27,24 @@ html{
 }
 
 body{
-    font-family:"Inter","Noto Sans Bengali",sans-serif;
-    background:
-        radial-gradient(circle at 80% 10%,rgba(22,135,255,.12),transparent 30%),
-        radial-gradient(circle at 10% 40%,rgba(0,183,255,.06),transparent 25%),
-        var(--bg);
-    color:var(--text);
+    font-family:'Inter','Noto Sans Bengali',sans-serif;
+    background:#05070d;
+    color:#fff;
+    line-height:1.7;
     overflow-x:hidden;
+}
+
+body.bn{
+    font-family:'Noto Sans Bengali','Inter',sans-serif;
+}
+
+:root{
+    --blue:#1677ff;
+    --blue2:#00b7ff;
+    --dark:#05070d;
+    --card:rgba(255,255,255,.055);
+    --border:rgba(255,255,255,.1);
+    --muted:#a7adba;
 }
 
 a{
@@ -58,51 +52,26 @@ a{
     text-decoration:none;
 }
 
-img{
-    max-width:100%;
-    display:block;
+.container{
+    width:min(1150px,92%);
+    margin:auto;
 }
 
-/* =========================
-   CURSOR GLOW
-========================= */
+/* NAVBAR */
 
-.cursor-glow{
-    width:300px;
-    height:300px;
-    position:fixed;
-    pointer-events:none;
-    border-radius:50%;
-    background:radial-gradient(circle,
-        rgba(22,135,255,.12),
-        transparent 65%);
-    transform:translate(-50%,-50%);
-    z-index:0;
-}
-
-/* =========================
-   NAVBAR
-========================= */
-
-nav{
+header{
     position:fixed;
     top:0;
     left:0;
     width:100%;
     z-index:1000;
-    padding:20px 6%;
-    transition:.3s;
-}
-
-nav.scrolled{
-    background:rgba(5,7,11,.75);
     backdrop-filter:blur(20px);
-    border-bottom:1px solid var(--border);
+    background:rgba(5,7,13,.72);
+    border-bottom:1px solid rgba(255,255,255,.07);
 }
 
-.nav-inner{
-    max-width:1250px;
-    margin:auto;
+.nav{
+    height:78px;
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -110,22 +79,22 @@ nav.scrolled{
 
 .logo{
     font-size:22px;
-    font-weight:900;
+    font-weight:800;
     letter-spacing:2px;
 }
 
 .logo span{
-    color:var(--blue);
+    color:var(--blue2);
 }
 
 .nav-links{
     display:flex;
-    gap:32px;
-    list-style:none;
+    align-items:center;
+    gap:28px;
 }
 
 .nav-links a{
-    color:#c8ced9;
+    color:#cbd0da;
     font-size:14px;
     transition:.3s;
 }
@@ -134,310 +103,275 @@ nav.scrolled{
     color:#fff;
 }
 
-.nav-btn{
-    padding:11px 20px;
-    border:1px solid rgba(22,135,255,.5);
-    border-radius:100px;
-    color:#fff;
-    background:rgba(22,135,255,.08);
+.lang{
+    display:flex;
+    gap:5px;
+    padding:4px;
+    border:1px solid var(--border);
+    border-radius:30px;
+    background:rgba(255,255,255,.04);
+}
+
+.lang button{
+    border:0;
+    background:transparent;
+    color:#aaa;
+    padding:7px 12px;
+    border-radius:20px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.lang button.active{
+    background:var(--blue);
+    color:white;
 }
 
 .menu{
     display:none;
-    font-size:26px;
+    font-size:25px;
     cursor:pointer;
 }
 
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
 .hero{
     min-height:100vh;
-    max-width:1250px;
-    margin:auto;
-    padding:150px 6% 100px;
-    display:grid;
-    grid-template-columns:1.15fr .85fr;
+    display:flex;
     align-items:center;
-    gap:60px;
+    padding-top:100px;
     position:relative;
-    z-index:1;
 }
 
-.hero-badge{
-    display:inline-flex;
+.hero:before{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:var(--blue);
+    filter:blur(180px);
+    opacity:.18;
+    top:20%;
+    left:-180px;
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:70px;
     align-items:center;
-    gap:8px;
-    padding:9px 15px;
-    border:1px solid var(--border);
-    background:var(--glass);
-    border-radius:100px;
-    color:#bfc7d5;
-    font-size:13px;
-    margin-bottom:25px;
 }
 
-.dot{
-    width:7px;
-    height:7px;
-    background:#27e88b;
-    border-radius:50%;
-    box-shadow:0 0 15px #27e88b;
+.badge{
+    display:inline-flex;
+    padding:8px 15px;
+    border:1px solid rgba(22,119,255,.4);
+    background:rgba(22,119,255,.08);
+    border-radius:30px;
+    color:#8ec2ff;
+    font-size:13px;
+    margin-bottom:22px;
 }
 
 .hero h1{
-    font-size:clamp(55px,8vw,110px);
-    line-height:.9;
-    letter-spacing:-5px;
-    font-weight:900;
+    font-size:clamp(48px,7vw,88px);
+    line-height:.98;
+    letter-spacing:-4px;
+    margin-bottom:24px;
 }
 
 .hero h1 span{
-    color:transparent;
-    -webkit-text-stroke:1px rgba(255,255,255,.5);
+    color:var(--blue2);
 }
 
-.hero-subtitle{
-    font-size:20px;
-    color:#c7ccd7;
-    margin:30px 0 15px;
-}
-
-.hero-desc{
+.hero p{
     color:var(--muted);
-    line-height:1.8;
-    max-width:570px;
+    font-size:17px;
+    max-width:620px;
+    margin-bottom:32px;
 }
 
-.hero-buttons{
+.buttons{
     display:flex;
-    gap:15px;
-    margin-top:35px;
+    gap:14px;
+    flex-wrap:wrap;
 }
 
 .btn{
-    padding:15px 24px;
-    border-radius:100px;
-    font-size:14px;
+    padding:13px 22px;
+    border-radius:12px;
     font-weight:700;
+    font-size:14px;
+    border:1px solid var(--border);
     transition:.3s;
 }
 
 .btn-primary{
-    background:linear-gradient(100deg,var(--blue),var(--blue2));
-    color:#fff;
-    box-shadow:0 10px 40px rgba(22,135,255,.2);
+    background:var(--blue);
+    border-color:var(--blue);
 }
 
-.btn-primary:hover{
+.btn:hover{
     transform:translateY(-3px);
 }
 
 .btn-outline{
-    border:1px solid var(--border);
-    background:var(--glass);
+    background:rgba(255,255,255,.04);
 }
 
-.btn-outline:hover{
-    border-color:var(--blue);
-}
+/* HERO IMAGE */
 
-/* HERO VISUAL */
-
-.hero-visual{
+.hero-photo{
     position:relative;
+    display:flex;
+    justify-content:center;
 }
 
-.hero-card{
-    width:100%;
+.hero-photo:before{
+    content:"";
+    position:absolute;
+    width:350px;
+    height:350px;
+    background:var(--blue);
+    filter:blur(100px);
+    opacity:.18;
+}
+
+.hero-photo img{
+    position:relative;
+    width:min(420px,100%);
     aspect-ratio:4/5;
-    border-radius:35px;
-    background:
-        linear-gradient(145deg,
-        rgba(22,135,255,.25),
-        rgba(255,255,255,.02)),
-        var(--card);
-    border:1px solid var(--border);
-    display:flex;
-    align-items:flex-end;
-    justify-content:center;
-    overflow:hidden;
-    position:relative;
+    object-fit:cover;
+    border-radius:30px;
+    border:1px solid rgba(255,255,255,.12);
+    box-shadow:0 30px 80px rgba(0,0,0,.5);
 }
 
-.hero-card::before{
-    content:"forhad pp.jpeg";
-    position:absolute;
-    top:25px;
-    right:30px;
-    font-size:80px;
-    font-weight:900;
-    color:rgba(255,255,255,.035);
-}
-
-.hero-placeholder{
-    width:80%;
-    height:90%;
-    border-radius:30px 30px 0 0;
-    background:
-        radial-gradient(circle at 50% 30%,
-        rgba(22,135,255,.55),
-        transparent 28%),
-        linear-gradient(145deg,#101927,#070a10);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:rgba(255,255,255,.15);
-    font-size:120px;
-    font-weight:900;
-}
-
-.floating-card{
-    position:absolute;
-    bottom:30px;
-    left:-40px;
-    padding:18px 22px;
-    border-radius:18px;
-    background:rgba(10,14,22,.8);
-    backdrop-filter:blur(20px);
-    border:1px solid var(--border);
-}
-
-.floating-card strong{
-    display:block;
-    font-size:25px;
-}
-
-.floating-card small{
-    color:var(--muted);
-}
-
-/* =========================
-   SECTION
-========================= */
+/* SECTION */
 
 section{
-    max-width:1250px;
-    margin:auto;
-    padding:120px 6%;
-    position:relative;
-    z-index:1;
-}
-
-.section-label{
-    color:var(--blue2);
-    font-size:13px;
-    font-weight:700;
-    letter-spacing:3px;
-    text-transform:uppercase;
-    margin-bottom:15px;
+    padding:110px 0;
 }
 
 .section-title{
-    font-size:clamp(40px,5vw,70px);
-    line-height:1;
-    letter-spacing:-3px;
     margin-bottom:50px;
 }
 
-/* =========================
-   ABOUT
-========================= */
+.eyebrow{
+    color:var(--blue2);
+    text-transform:uppercase;
+    letter-spacing:3px;
+    font-size:12px;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.section-title h2{
+    font-size:clamp(35px,5vw,55px);
+    line-height:1.1;
+}
+
+.section-title p{
+    color:var(--muted);
+    max-width:650px;
+    margin-top:15px;
+}
+
+/* ABOUT */
 
 .about-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:70px;
+    gap:60px;
 }
 
-.about-text{
-    color:#aeb6c4;
-    line-height:1.9;
-    font-size:16px;
+.about-text p{
+    color:var(--muted);
+    margin-bottom:20px;
 }
 
-.skills{
+.stats{
     display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:12px;
-    margin-top:30px;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
 }
 
-.skill{
-    padding:17px;
+.stat{
+    padding:30px;
     border:1px solid var(--border);
-    background:var(--glass);
-    border-radius:14px;
+    background:var(--card);
+    border-radius:20px;
+}
+
+.stat strong{
+    display:block;
+    font-size:34px;
+    color:var(--blue2);
+}
+
+.stat span{
+    color:#aeb4c0;
     font-size:14px;
 }
 
-/* =========================
-   SERVICES
-========================= */
+/* SERVICES */
 
-.services{
+.cards{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:18px;
 }
 
-.service{
+.card{
     padding:30px;
-    min-height:230px;
+    border-radius:22px;
     border:1px solid var(--border);
-    background:linear-gradient(145deg,
-        rgba(255,255,255,.045),
-        rgba(255,255,255,.015));
-    border-radius:var(--radius);
+    background:var(--card);
     transition:.4s;
 }
 
-.service:hover{
+.card:hover{
     transform:translateY(-8px);
-    border-color:rgba(22,135,255,.5);
+    border-color:rgba(22,119,255,.5);
+    background:rgba(22,119,255,.07);
 }
 
-.service-number{
-    color:var(--blue);
-    font-size:13px;
+.icon{
+    font-size:30px;
+    margin-bottom:20px;
 }
 
-.service h3{
-    margin:45px 0 12px;
-    font-size:22px;
+.card h3{
+    margin-bottom:10px;
 }
 
-.service p{
+.card p{
     color:var(--muted);
-    line-height:1.7;
     font-size:14px;
 }
 
-/* =========================
-   PORTFOLIO
-========================= */
+/* PORTFOLIO */
 
 .filters{
     display:flex;
+    gap:8px;
     flex-wrap:wrap;
-    gap:10px;
-    margin-bottom:30px;
+    margin-bottom:25px;
 }
 
 .filter{
     border:1px solid var(--border);
-    background:var(--glass);
-    color:#bfc5d0;
-    padding:9px 17px;
-    border-radius:100px;
+    background:transparent;
+    color:#aaa;
+    padding:8px 15px;
+    border-radius:30px;
     cursor:pointer;
 }
 
 .filter.active,
 .filter:hover{
     background:var(--blue);
-    color:white;
+    color:#fff;
 }
 
 .portfolio{
@@ -446,61 +380,30 @@ section{
     gap:18px;
 }
 
-.project{
-    aspect-ratio:1/1;
+.work{
+    min-height:280px;
     border-radius:22px;
-    overflow:hidden;
-    position:relative;
     border:1px solid var(--border);
-    background:linear-gradient(145deg,#101722,#080b11);
-}
-
-.project:nth-child(2){
-    aspect-ratio:1/1.25;
-}
-
-.project:nth-child(5){
-    aspect-ratio:1/1.25;
-}
-
-.project-bg{
-    width:100%;
-    height:100%;
+    background:linear-gradient(135deg,#0d1425,#080a10);
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:55px;
-    font-weight:900;
-    color:rgba(255,255,255,.08);
-    transition:.5s;
+    overflow:hidden;
+    position:relative;
 }
 
-.project:hover .project-bg{
-    transform:scale(1.08);
-}
-
-.project-info{
-    position:absolute;
-    left:0;
-    bottom:0;
+.work img{
     width:100%;
-    padding:25px;
-    background:linear-gradient(transparent,rgba(0,0,0,.9));
+    height:100%;
+    object-fit:cover;
 }
 
-.project-info h3{
-    font-size:19px;
+.work span{
+    color:#6f7888;
+    font-size:14px;
 }
 
-.project-info p{
-    color:#9ea6b5;
-    font-size:13px;
-    margin-top:5px;
-}
-
-/* =========================
-   PROCESS
-========================= */
+/* PROCESS */
 
 .process{
     display:grid;
@@ -508,161 +411,129 @@ section{
     gap:15px;
 }
 
-.process-item{
+.step{
     padding:25px;
-    border-top:1px solid var(--border);
+    border-left:2px solid var(--blue);
+    background:rgba(255,255,255,.035);
 }
 
-.process-number{
-    font-size:40px;
-    color:rgba(22,135,255,.4);
-    font-weight:900;
+.step-number{
+    color:var(--blue2);
+    font-weight:800;
+    font-size:13px;
 }
 
-.process h3{
-    margin:20px 0 10px;
+.step h3{
+    margin:10px 0;
 }
 
-.process p{
+.step p{
     color:var(--muted);
-    line-height:1.6;
-    font-size:14px;
+    font-size:13px;
 }
 
-/* =========================
-   CTA
-========================= */
+/* CTA */
 
 .cta{
-    max-width:1250px;
-    margin:80px auto 120px;
-    padding:80px 6%;
-    border:1px solid var(--border);
-    border-radius:35px;
-    background:
-        radial-gradient(circle at 80% 20%,rgba(22,135,255,.18),transparent 30%),
-        linear-gradient(145deg,#0d141f,#080b11);
+    padding:70px 30px;
+    border-radius:30px;
     text-align:center;
+    background:
+    radial-gradient(circle at center,rgba(22,119,255,.25),transparent 55%),
+    rgba(255,255,255,.04);
+    border:1px solid var(--border);
 }
 
 .cta h2{
-    font-size:clamp(40px,6vw,80px);
-    letter-spacing:-4px;
-    line-height:1;
+    font-size:clamp(35px,5vw,60px);
+    margin-bottom:15px;
 }
 
 .cta p{
     color:var(--muted);
-    margin:20px auto 30px;
-    max-width:550px;
+    margin-bottom:25px;
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 footer{
+    padding:40px 0;
     border-top:1px solid var(--border);
-    padding:45px 6%;
 }
 
-.footer-inner{
-    max-width:1250px;
-    margin:auto;
+.footer{
     display:flex;
     justify-content:space-between;
-    gap:30px;
+    gap:20px;
+    flex-wrap:wrap;
 }
 
-.footer-brand{
-    font-weight:900;
-    letter-spacing:2px;
-}
-
-.footer-brand span{
-    color:var(--blue);
-}
-
-.footer-copy{
-    color:#6f7785;
+.footer p{
+    color:#777f8e;
     font-size:13px;
 }
 
-/* =========================
-   REVEAL
-========================= */
+/* WHATSAPP */
 
-.reveal{
-    opacity:0;
-    transform:translateY(35px);
-    transition:1s ease;
+.whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#25D366;
+    color:white;
+    font-size:25px;
+    z-index:999;
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
 }
 
-.reveal.show{
-    opacity:1;
-    transform:none;
-}
-
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media(max-width:850px){
 
     .nav-links{
         position:absolute;
-        top:75px;
-        left:6%;
-        right:6%;
-        display:none;
+        top:78px;
+        left:0;
+        width:100%;
+        background:#080b12;
+        padding:25px;
         flex-direction:column;
-        gap:0;
-        background:rgba(7,10,16,.96);
-        backdrop-filter:blur(20px);
-        border:1px solid var(--border);
-        border-radius:20px;
-        padding:15px;
-    }
-
-    .nav-links.active{
-        display:flex;
-    }
-
-    .nav-links a{
-        padding:14px;
-    }
-
-    .nav-btn{
         display:none;
+    }
+
+    .nav-links.show{
+        display:flex;
     }
 
     .menu{
         display:block;
     }
 
-    .hero{
+    .hero-grid,
+    .about-grid{
         grid-template-columns:1fr;
+    }
+
+    .hero{
         padding-top:130px;
     }
 
     .hero h1{
-        font-size:clamp(55px,17vw,90px);
-        letter-spacing:-4px;
+        letter-spacing:-2px;
     }
 
-    .hero-visual{
-        max-width:500px;
-        margin:auto;
-        width:100%;
+    .hero-photo{
+        order:-1;
     }
 
-    .about-grid{
+    .cards{
         grid-template-columns:1fr;
-        gap:35px;
-    }
-
-    .services{
-        grid-template-columns:1fr 1fr;
     }
 
     .portfolio{
@@ -672,47 +543,29 @@ footer{
     .process{
         grid-template-columns:1fr 1fr;
     }
-
 }
 
-@media(max-width:550px){
+@media(max-width:520px){
 
     section{
-        padding:85px 5%;
+        padding:80px 0;
     }
 
-    .hero{
-        padding-left:5%;
-        padding-right:5%;
+    .portfolio{
+        grid-template-columns:1fr;
     }
 
-    .hero-buttons{
-        flex-direction:column;
-    }
-
-    .btn{
-        text-align:center;
-    }
-
-    .services,
-    .portfolio,
     .process{
         grid-template-columns:1fr;
     }
 
-    .project:nth-child(2),
-    .project:nth-child(5){
-        aspect-ratio:1/1;
+    .stats{
+        grid-template-columns:1fr 1fr;
     }
 
-    .floating-card{
-        left:15px;
+    .hero-photo img{
+        width:85%;
     }
-
-    .footer-inner{
-        flex-direction:column;
-    }
-
 }
 
 </style>
@@ -720,71 +573,81 @@ footer{
 
 <body>
 
-<div class="cursor-glow" id="cursorGlow"></div>
+<header>
 
-<!-- NAVBAR -->
+<div class="container nav">
 
-<nav id="navbar">
+<a href="#" class="logo">KAZI <span>FORHAD</span></a>
 
-<div class="nav-inner">
+<div class="nav-links" id="navLinks">
 
-<a href="#" class="logo">
-KAZI<span>.</span>
-</a>
+<a href="#home" data-en="Home" data-bn="হোম">Home</a>
 
-<ul class="nav-links" id="navLinks">
-<li><a href="#home">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#services">Services</a></li>
-<li><a href="#work">Work</a></li>
-<li><a href="#process">Process</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
+<a href="#about" data-en="About" data-bn="আমার সম্পর্কে">About</a>
 
-<a href="#contact" class="nav-btn">Let's Talk</a>
+<a href="#services" data-en="Services" data-bn="সেবাসমূহ">Services</a>
 
-<div class="menu" id="menu">☰</div>
+<a href="#portfolio" data-en="Portfolio" data-bn="পোর্টফোলিও">Portfolio</a>
+
+<a href="#process" data-en="Process" data-bn="কাজের প্রক্রিয়া">Process</a>
+
+<a href="#contact" data-en="Contact" data-bn="যোগাযোগ">Contact</a>
+
+<div class="lang">
+
+<button id="enBtn" class="active" onclick="setLanguage('en')">EN</button>
+
+<button id="bnBtn" onclick="setLanguage('bn')">বাংলা</button>
 
 </div>
 
-</nav>
+</div>
 
+<div class="menu" onclick="toggleMenu()">☰</div>
 
-<!-- HERO -->
+</div>
+
+</header>
+
 
 <main>
 
-<div class="hero" id="home">
+<!-- HERO -->
 
-<div class="hero-content reveal">
+<section class="hero" id="home">
 
-<div class="hero-badge">
-<span class="dot"></span>
-Available for freelance projects
+<div class="container hero-grid">
+
+<div>
+
+<div class="badge"
+data-en="GRAPHIC DESIGNER • TYPOGRAPHY ARTIST"
+data-bn="গ্রাফিক ডিজাইনার • টাইপোগ্রাফি শিল্পী">
+GRAPHIC DESIGNER • TYPOGRAPHY ARTIST
 </div>
 
 <h1>
-KAZI<br>
-<span>FORHAD</span>
+<span>KAZI</span><br>
+FORHAD
 </h1>
 
-<div class="hero-subtitle">
-Graphic Designer & Bangla Typography Artist
-</div>
-
-<p class="hero-desc">
-I create meaningful visual identities, typography,
-branding and digital designs that turn ideas into
-memorable experiences.
+<p
+data-en="Assalamu Alaikum! I am Kazi Forhad, a Graphic Designer and Bangla Typography Artist from Bangladesh."
+data-bn="আসসালামু আলাইকুম! আমি কাজী ফরহাদ। আমি বাংলাদেশের একজন গ্রাফিক ডিজাইনার ও বাংলা টাইপোগ্রাফি শিল্পী।">
+Assalamu Alaikum! I am Kazi Forhad, a Graphic Designer and Bangla Typography Artist from Bangladesh.
 </p>
 
-<div class="hero-buttons">
+<div class="buttons">
 
-<a href="#work" class="btn btn-primary">
-View My Work →
+<a href="#portfolio" class="btn btn-primary"
+data-en="View My Work"
+data-bn="আমার কাজ দেখুন">
+View My Work
 </a>
 
-<a href="#contact" class="btn btn-outline">
+<a href="#contact" class="btn btn-outline"
+data-en="Hire Me"
+data-bn="কাজের জন্য যোগাযোগ করুন">
 Hire Me
 </a>
 
@@ -793,68 +656,116 @@ Hire Me
 </div>
 
 
-<div class="hero-visual reveal">
+<div class="hero-photo">
 
-<div class="hero-card">
-
-<!-- এখানে আপনার ছবি বসাবেন -->
-
-<div class="hero-placeholder">
-KF
-</div>
-
-</div>
-
-<div class="floating-card">
-<strong>Creative</strong>
-<small>Design • Typography • Branding</small>
-</div>
+<img src="forhad.jpg" alt="Kazi Forhad">
 
 </div>
 
 </div>
+
+</section>
 
 
 <!-- ABOUT -->
 
-<section id="about" class="reveal">
+<section id="about">
 
-<div class="section-label">About Me</div>
+<div class="container">
 
-<h2 class="section-title">
-Designing ideas<br>
-into <span style="color:#1687ff">visuals.</span>
+<div class="section-title">
+
+<div class="eyebrow"
+data-en="ABOUT ME"
+data-bn="আমার সম্পর্কে">
+ABOUT ME
+</div>
+
+<h2
+data-en="Designing ideas into visual experiences."
+data-bn="ভাবনাকে রূপ দিই দৃশ্যমান ডিজাইনে।">
+Designing ideas into visual experiences.
 </h2>
 
-<div class="about-grid">
-
-<div>
-
-<p class="about-text">
-Assalamu Alaikum, I am Kazi Forhad, a Graphic Designer
-from Dhaka, Bangladesh. I am passionate about visual
-communication, branding and Bangla typography.
-</p>
-
-<br>
-
-<p class="about-text">
-My goal is simple — to create designs that look beautiful,
-communicate clearly and stay memorable.
+<p
+data-en="Creative design is not just about making things beautiful. It is about communicating an idea clearly and memorably."
+data-bn="ক্রিয়েটিভ ডিজাইন শুধু সুন্দর কিছু তৈরি করা নয়; একটি ধারণাকে সুন্দর, স্পষ্ট ও স্মরণীয়ভাবে প্রকাশ করাই আমার লক্ষ্য।">
+Creative design is not just about making things beautiful.
 </p>
 
 </div>
 
-<div class="skills">
 
-<div class="skill">Graphic Design</div>
-<div class="skill">Bangla Typography</div>
-<div class="skill">Logo & Branding</div>
-<div class="skill">Poster Design</div>
-<div class="skill">Book Cover</div>
-<div class="skill">Social Media</div>
-<div class="skill">Thumbnail Design</div>
-<div class="skill">Creative Direction</div>
+<div class="about-grid">
+
+<div class="about-text">
+
+<p
+data-en="I work on graphic design, branding, Bangla typography, social media design, posters, book covers and creative visual projects."
+data-bn="আমি গ্রাফিক ডিজাইন, ব্র্যান্ডিং, বাংলা টাইপোগ্রাফি, সোশ্যাল মিডিয়া ডিজাইন, পোস্টার, বইয়ের প্রচ্ছদসহ বিভিন্ন ক্রিয়েটিভ ভিজ্যুয়াল প্রজেক্টে কাজ করি।">
+I work on graphic design, branding, Bangla typography, social media design, posters, book covers and creative visual projects.
+</p>
+
+<p
+data-en="My goal is to create clean, meaningful and visually powerful designs that connect with people."
+data-bn="আমার লক্ষ্য হলো এমন পরিষ্কার, অর্থবহ ও শক্তিশালী ডিজাইন তৈরি করা, যা মানুষের সঙ্গে সংযোগ তৈরি করে।">
+My goal is to create clean, meaningful and visually powerful designs that connect with people.
+</p>
+
+</div>
+
+
+<div class="stats">
+
+<div class="stat">
+
+<strong>06+</strong>
+
+<span
+data-en="Design Services"
+data-bn="ডিজাইন সার্ভিস">
+Design Services
+</span>
+
+</div>
+
+<div class="stat">
+
+<strong>∞</strong>
+
+<span
+data-en="Creative Ideas"
+data-bn="ক্রিয়েটিভ আইডিয়া">
+Creative Ideas
+</span>
+
+</div>
+
+<div class="stat">
+
+<strong>24/7</strong>
+
+<span
+data-en="Creative Mind"
+data-bn="ক্রিয়েটিভ চিন্তা">
+Creative Mind
+</span>
+
+</div>
+
+<div class="stat">
+
+<strong>100%</strong>
+
+<span
+data-en="Dedication"
+data-bn="নিবেদন">
+Dedication
+</span>
+
+</div>
+
+</div>
 
 </div>
 
@@ -865,68 +776,142 @@ communicate clearly and stay memorable.
 
 <!-- SERVICES -->
 
-<section id="services" class="reveal">
+<section id="services">
 
-<div class="section-label">What I Do</div>
+<div class="container">
 
-<h2 class="section-title">
-My <span style="color:#1687ff">Services</span>
+<div class="section-title">
+
+<div class="eyebrow"
+data-en="SERVICES"
+data-bn="সেবাসমূহ">
+SERVICES
+</div>
+
+<h2
+data-en="What I can do for you."
+data-bn="আপনার জন্য আমি যা করতে পারি।">
+What I can do for you.
 </h2>
 
-<div class="services">
-
-<div class="service">
-<span class="service-number">01</span>
-<h3>Logo & Branding</h3>
-<p>
-Memorable logos and complete visual identities
-designed for modern brands.
-</p>
 </div>
 
-<div class="service">
-<span class="service-number">02</span>
-<h3>Bangla Typography</h3>
-<p>
-Creative Bangla lettering and typography for
-posters, covers and campaigns.
+
+<div class="cards">
+
+<div class="card">
+
+<div class="icon">✦</div>
+
+<h3
+data-en="Logo & Branding"
+data-bn="লোগো ও ব্র্যান্ডিং">
+Logo & Branding
+</h3>
+
+<p
+data-en="Professional visual identities, logos and complete brand solutions."
+data-bn="প্রফেশনাল লোগো, ভিজ্যুয়াল আইডেন্টিটি ও সম্পূর্ণ ব্র্যান্ডিং সলিউশন।">
+Professional visual identities, logos and complete brand solutions.
 </p>
+
 </div>
 
-<div class="service">
-<span class="service-number">03</span>
-<h3>Poster Design</h3>
-<p>
-Professional promotional, cultural and event
-poster design.
+
+<div class="card">
+
+<div class="icon">▣</div>
+
+<h3
+data-en="Social Media Design"
+data-bn="সোশ্যাল মিডিয়া ডিজাইন">
+Social Media Design
+</h3>
+
+<p
+data-en="Creative and engaging designs for Facebook, Instagram and other platforms."
+data-bn="Facebook, Instagram সহ বিভিন্ন সোশ্যাল মিডিয়ার জন্য আকর্ষণীয় ডিজাইন।">
+Creative and engaging designs for Facebook, Instagram and other platforms.
 </p>
+
 </div>
 
-<div class="service">
-<span class="service-number">04</span>
-<h3>Book Cover</h3>
-<p>
-Concept-driven book covers that communicate
-the story before it is opened.
+
+<div class="card">
+
+<div class="icon">Aa</div>
+
+<h3
+data-en="Bangla Typography"
+data-bn="বাংলা টাইপোগ্রাফি">
+Bangla Typography
+</h3>
+
+<p
+data-en="Unique Bangla lettering and typography artwork for creative projects."
+data-bn="ক্রিয়েটিভ প্রজেক্টের জন্য ইউনিক বাংলা লেটারিং ও টাইপোগ্রাফি ডিজাইন।">
+Unique Bangla lettering and typography artwork for creative projects.
 </p>
+
 </div>
 
-<div class="service">
-<span class="service-number">05</span>
-<h3>Social Media</h3>
-<p>
-Modern social media creatives for brands,
-businesses and creators.
+
+<div class="card">
+
+<div class="icon">◈</div>
+
+<h3
+data-en="Poster Design"
+data-bn="পোস্টার ডিজাইন">
+Poster Design
+</h3>
+
+<p
+data-en="Modern promotional posters designed to communicate your message."
+data-bn="আপনার বার্তা সুন্দরভাবে উপস্থাপনের জন্য আধুনিক প্রমোশনাল পোস্টার।">
+Modern promotional posters designed to communicate your message.
 </p>
+
 </div>
 
-<div class="service">
-<span class="service-number">06</span>
-<h3>Thumbnail Design</h3>
-<p>
-Professional YouTube thumbnails designed
-to attract attention.
+
+<div class="card">
+
+<div class="icon">▤</div>
+
+<h3
+data-en="Book Cover"
+data-bn="বইয়ের প্রচ্ছদ">
+Book Cover
+</h3>
+
+<p
+data-en="Creative and meaningful covers for books, poetry and publications."
+data-bn="বই, কবিতা ও বিভিন্ন প্রকাশনার জন্য সৃজনশীল প্রচ্ছদ ডিজাইন।">
+Creative and meaningful covers for books, poetry and publications.
 </p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">▶️</div>
+
+<h3
+data-en="YouTube Thumbnail"
+data-bn="ইউটিউব থাম্বনেইল">
+YouTube Thumbnail
+</h3>
+
+<p
+data-en="Eye-catching thumbnails designed to increase attention and clicks."
+data-bn="দর্শকের নজর কাড়ার জন্য আকর্ষণীয় ও প্রফেশনাল থাম্বনেইল ডিজাইন।">
+Eye-catching thumbnails designed to increase attention and clicks.
+</p>
+
+</div>
+
 </div>
 
 </div>
@@ -936,87 +921,64 @@ to attract attention.
 
 <!-- PORTFOLIO -->
 
-<section id="work" class="reveal">
+<section id="portfolio">
 
-<div class="section-label">Selected Work</div>
+<div class="container">
 
-<h2 class="section-title">
-Some of my <span style="color:#1687ff">works.</span>
+<div class="section-title">
+
+<div class="eyebrow"
+data-en="PORTFOLIO"
+data-bn="পোর্টফোলিও">
+PORTFOLIO
+</div>
+
+<h2
+data-en="Selected creative works."
+data-bn="নির্বাচিত কিছু কাজ।">
+Selected creative works.
 </h2>
+
+</div>
+
 
 <div class="filters">
 
-<button class="filter active" data-filter="all">
-All
-</button>
-
-<button class="filter" data-filter="branding">
-Branding
-</button>
-
-<button class="filter" data-filter="typography">
-Typography
-</button>
-
-<button class="filter" data-filter="poster">
-Poster
-</button>
-
-<button class="filter" data-filter="cover">
-Book Cover
-</button>
+<button class="filter active">All</button>
+<button class="filter">Branding</button>
+<button class="filter">Typography</button>
+<button class="filter">Poster</button>
+<button class="filter">Book Cover</button>
 
 </div>
 
 
 <div class="portfolio">
 
-<div class="project" data-category="branding">
-<div class="project-bg">01</div>
-<div class="project-info">
-<h3>Brand Identity</h3>
-<p>Branding / Identity</p>
-</div>
+<div class="work">
+<span>YOUR DESIGN 01</span>
 </div>
 
-<div class="project" data-category="typography">
-<div class="project-bg">02</div>
-<div class="project-info">
-<h3>Bangla Typography</h3>
-<p>Typography / Lettering</p>
-</div>
+<div class="work">
+<span>YOUR DESIGN 02</span>
 </div>
 
-<div class="project" data-category="poster">
-<div class="project-bg">03</div>
-<div class="project-info">
-<h3>Creative Poster</h3>
-<p>Poster Design</p>
-</div>
+<div class="work">
+<span>YOUR DESIGN 03</span>
 </div>
 
-<div class="project" data-category="cover">
-<div class="project-bg">04</div>
-<div class="project-info">
-<h3>Book Cover</h3>
-<p>Cover Design</p>
-</div>
+<div class="work">
+<span>YOUR DESIGN 04</span>
 </div>
 
-<div class="project" data-category="typography">
-<div class="project-bg">05</div>
-<div class="project-info">
-<h3>Experimental Type</h3>
-<p>Typography</p>
-</div>
+<div class="work">
+<span>YOUR DESIGN 05</span>
 </div>
 
-<div class="project" data-category="branding">
-<div class="project-bg">06</div>
-<div class="project-info">
-<h3>Visual Identity</h3>
-<p>Branding</p>
+<div class="work">
+<span>YOUR DESIGN 06</span>
 </div>
+
 </div>
 
 </div>
@@ -1026,47 +988,104 @@ Book Cover
 
 <!-- PROCESS -->
 
-<section id="process" class="reveal">
+<section id="process">
 
-<div class="section-label">How I Work</div>
+<div class="container">
 
-<h2 class="section-title">
-Simple process.<br>
-<span style="color:#1687ff">Strong results.</span>
+<div class="section-title">
+
+<div class="eyebrow"
+data-en="PROCESS"
+data-bn="কাজের প্রক্রিয়া">
+PROCESS
+</div>
+
+<h2
+data-en="Simple process. Better results."
+data-bn="সহজ প্রক্রিয়া। আরও ভালো ফলাফল।">
+Simple process. Better results.
 </h2>
+
+</div>
+
 
 <div class="process">
 
-<div class="process-item">
-<div class="process-number">01</div>
-<h3>Discover</h3>
-<p>
-Understanding your brand, goals and audience.
+<div class="step">
+
+<div class="step-number">01</div>
+
+<h3
+data-en="Discover"
+data-bn="বুঝে নেওয়া">
+Discover
+</h3>
+
+<p
+data-en="Understanding your idea, goals and requirements."
+data-bn="আপনার ধারণা, লক্ষ্য ও প্রয়োজনীয়তা বুঝে নেওয়া।">
+Understanding your idea, goals and requirements.
 </p>
+
 </div>
 
-<div class="process-item">
-<div class="process-number">02</div>
-<h3>Concept</h3>
-<p>
-Creating a strong creative direction and visual idea.
+
+<div class="step">
+
+<div class="step-number">02</div>
+
+<h3
+data-en="Concept"
+data-bn="কনসেপ্ট">
+Concept
+</h3>
+
+<p
+data-en="Developing the right creative direction and visual concept."
+data-bn="সঠিক ক্রিয়েটিভ দিক ও ভিজ্যুয়াল কনসেপ্ট তৈরি করা।">
+Developing the right creative direction and visual concept.
 </p>
+
 </div>
 
-<div class="process-item">
-<div class="process-number">03</div>
-<h3>Design</h3>
-<p>
-Turning the concept into a polished visual solution.
+
+<div class="step">
+
+<div class="step-number">03</div>
+
+<h3
+data-en="Design"
+data-bn="ডিজাইন">
+Design
+</h3>
+
+<p
+data-en="Turning the concept into a polished and professional design."
+data-bn="কনসেপ্টকে একটি পরিপূর্ণ ও প্রফেশনাল ডিজাইনে রূপ দেওয়া।">
+Turning the concept into a polished and professional design.
 </p>
+
 </div>
 
-<div class="process-item">
-<div class="process-number">04</div>
-<h3>Deliver</h3>
-<p>
-Providing final professional files ready to use.
+
+<div class="step">
+
+<div class="step-number">04</div>
+
+<h3
+data-en="Deliver"
+data-bn="ডেলিভারি">
+Deliver
+</h3>
+
+<p
+data-en="Final files are prepared and delivered according to your needs."
+data-bn="আপনার প্রয়োজন অনুযায়ী ফাইনাল ফাইল প্রস্তুত ও ডেলিভারি করা।">
+Final files are prepared and delivered according to your needs.
 </p>
+
+</div>
+
 </div>
 
 </div>
@@ -1074,34 +1093,43 @@ Providing final professional files ready to use.
 </section>
 
 
-<!-- CTA -->
+<!-- CONTACT -->
 
-<div class="cta reveal" id="contact">
+<section id="contact">
 
-<div class="section-label">
-Let's Create Something
+<div class="container">
+
+<div class="cta">
+
+<div class="eyebrow"
+data-en="LET'S WORK TOGETHER"
+data-bn="চলুন একসাথে কাজ করি">
+LET'S WORK TOGETHER
 </div>
 
-<h2>
-Have a project<br>
-in <span style="color:#1687ff">mind?</span>
+<h2
+data-en="Have a project in mind?"
+data-bn="আপনার কি কোনো প্রজেক্ট আছে?">
+Have a project in mind?
 </h2>
 
-<p>
-Tell me about your project and let's turn your idea
-into something visually memorable.
+<p
+data-en="Let's turn your idea into something visually powerful."
+data-bn="আপনার আইডিয়াকে একটি শক্তিশালী ভিজ্যুয়াল ডিজাইনে রূপ দিই।">
+Let's turn your idea into something visually powerful.
 </p>
 
-<div class="hero-buttons" style="justify-content:center;">
+<div class="buttons" style="justify-content:center;">
 
-<a href="mailto:your@email.com"
-class="btn btn-primary">
-Email Me →
+<a href="mailto:your@email.com" class="btn btn-primary"
+data-en="Email Me"
+data-bn="ইমেইল করুন">
+Email Me
 </a>
 
-<a href="https://wa.me/8801000000000"
-class="btn btn-outline"
-target="_blank">
+<a href="https://wa.me/8801000000000" class="btn btn-outline"
+data-en="WhatsApp"
+data-bn="হোয়াটসঅ্যাপ">
 WhatsApp
 </a>
 
@@ -1109,134 +1137,107 @@ WhatsApp
 
 </div>
 
+</div>
+
+</section>
+
 </main>
 
 
-<!-- FOOTER -->
-
 <footer>
 
-<div class="footer-inner">
+<div class="container footer">
 
-<div class="footer-brand">
-KAZI<span>.</span>
-</div>
+<p>© 2026 KAZI FORHAD. All Rights Reserved.</p>
 
-<div class="footer-copy">
-© 2026 Kazi Forhad. All Rights Reserved.
-</div>
-
-<div class="footer-copy">
-Dhaka, Bangladesh
-</div>
+<p
+data-en="Graphic Designer • Bangla Typography Artist"
+data-bn="গ্রাফিক ডিজাইনার • বাংলা টাইপোগ্রাফি শিল্পী">
+Graphic Designer • Bangla Typography Artist
+</p>
 
 </div>
 
 </footer>
 
 
+<a href="https://wa.me/8801000000000"
+class="whatsapp"
+target="_blank">☏</a>
+
+
 <script>
 
-/* =========================
-   NAVBAR
-========================= */
+/* LANGUAGE */
 
-const navbar = document.getElementById("navbar");
+function setLanguage(lang){
 
-window.addEventListener("scroll",()=>{
-    if(window.scrollY > 50){
-        navbar.classList.add("scrolled");
-    }else{
-        navbar.classList.remove("scrolled");
-    }
-});
+    document.querySelectorAll("[data-en]").forEach(el=>{
+
+        el.textContent = el.getAttribute("data-" + lang);
+
+    });
+
+    document.getElementById("enBtn")
+    .classList.toggle("active",lang==="en");
+
+    document.getElementById("bnBtn")
+    .classList.toggle("active",lang==="bn");
+
+    document.documentElement.lang = lang;
+
+    document.body.classList.toggle("bn",lang==="bn");
+
+    localStorage.setItem("language",lang);
+}
 
 
-/* =========================
-   MOBILE MENU
-========================= */
+/* MOBILE MENU */
 
-const menu = document.getElementById("menu");
-const navLinks = document.getElementById("navLinks");
+function toggleMenu(){
 
-menu.addEventListener("click",()=>{
-    navLinks.classList.toggle("active");
-});
+    document.getElementById("navLinks")
+    .classList.toggle("show");
 
-document.querySelectorAll(".nav-links a").forEach(link=>{
+}
+
+
+/* REMEMBER LANGUAGE */
+
+const savedLanguage =
+localStorage.getItem("language");
+
+if(savedLanguage){
+    setLanguage(savedLanguage);
+}
+
+
+/* CLOSE MOBILE MENU */
+
+document.querySelectorAll(".nav-links a")
+.forEach(link=>{
+
     link.addEventListener("click",()=>{
-        navLinks.classList.remove("active");
+
+        document.getElementById("navLinks")
+        .classList.remove("show");
+
     });
+
 });
 
 
-/* =========================
-   CURSOR
-========================= */
+/* PORTFOLIO FILTER */
 
-const glow = document.getElementById("cursorGlow");
+document.querySelectorAll(".filter")
+.forEach(button=>{
 
-document.addEventListener("mousemove",(e)=>{
-    glow.style.left = e.clientX+"px";
-    glow.style.top = e.clientY+"px";
-});
+    button.addEventListener("click",()=>{
 
+        document.querySelectorAll(".filter")
+        .forEach(btn=>btn.classList.remove("active"));
 
-/* =========================
-   SCROLL REVEAL
-========================= */
-
-const observer = new IntersectionObserver(
-(entries)=>{
-    entries.forEach(entry=>{
-        if(entry.isIntersecting){
-            entry.target.classList.add("show");
-        }
-    });
-},
-{
-    threshold:.12
-});
-
-document.querySelectorAll(".reveal")
-.forEach(el=>observer.observe(el));
-
-
-/* =========================
-   PORTFOLIO FILTER
-========================= */
-
-const filters =
-document.querySelectorAll(".filter");
-
-const projects =
-document.querySelectorAll(".project");
-
-filters.forEach(filter=>{
-
-    filter.addEventListener("click",()=>{
-
-        filters.forEach(f=>
-            f.classList.remove("active")
-        );
-
-        filter.classList.add("active");
-
-        const category =
-            filter.dataset.filter;
-
-        projects.forEach(project=>{
-
-            if(
-                category === "all" ||
-                project.dataset.category === category
-            ){
-                project.style.display="block";
-            }else{
-                project.style.display="none";
-            }
-
-        });
+        button.classList.add("active");
 
     });
 
